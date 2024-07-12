@@ -1,0 +1,6 @@
+<div *ngFor="let plant of plants">
+    <h3>{{ plant.name }}</h3>
+    <p>{{ plant.species }}</p>
+    <p>{{ plant.acquired_date | date}}</p>
+    <img [src]="plant.picture" alt="{{ plant.name }}">
+</div>
