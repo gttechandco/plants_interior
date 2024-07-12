@@ -1,14 +1,18 @@
 import { RouterModule ,Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { PlantListComponent } from './components/plant-list/plant-list.component';
-import { PlantDetailComponent } from './components/plant-detail/plant-detail.component';
-import { PlantFormComponent } from './components/plant-form/plant-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { HistoryComponent } from './components/history/history.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 export const routes: Routes = [
-    { path: '', component: PlantListComponent },
-    { path: 'plants/:id', component: PlantDetailComponent },
-    { path: 'create', component: PlantFormComponent },
-    { path: 'edit/:id', component: PlantFormComponent }
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent},
+    { path: 'plants', component: PlantListComponent },
+    { path: 'notifications', component: NotificationsComponent },
+    { path: 'history', component: HistoryComponent },
+    { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({
