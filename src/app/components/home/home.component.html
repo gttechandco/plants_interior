@@ -1,1 +1,50 @@
-<p>home works!</p>
+<section class="container-fluid bg-dark" id="welcome">
+    <h2>
+        Bienvenue chez <span style="color: slateblue;">vous</span>!
+    </h2>
+    <p>Rassurez vous! <span style="color: khaki;">Vos plantes se portent bien aujourd'hui</span></p>
+</section>
+
+<section class="container-fluid bg-light text-light" id="home">
+    <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h4 class="my-0 font-weight-normal">Statistiques</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Plantes suivies : {{ statistics.plantsCount }}</h5>
+              <h5 class="card-title">Notifications récentes : {{ statistics.recentNotificationsCount }}</h5>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-dark text-white">
+              <h4 class="my-0 font-weight-normal">Liens Rapides</h4>
+            </div>
+            <div class="card-body">
+              <a href="/plants" routerLink="/plants" class="btn btn-primary btn-block">Voir les Plantes</a>
+              <a href="/notifications" routerLink="/notifications" class="btn btn-secondary btn-block">Voir les Notifications</a>
+              <a href="/history" routerLink="/history" class="btn btn-dark btn-block">Voir l'Historique</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-danger text-light">
+              <h4 class="my-0 font-weight-normal">Dernières Activités</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let activity of recentActivities"> {{ activity.description }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
